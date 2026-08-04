@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Path to Well-Being — Bikitsha Occupational Therapy</title>
+<meta name="description" content="Answer a few questions to find the right occupational therapy support — paediatrics, mental health, workplace wellness and medico-legal services in Midrand and via telehealth.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --crimson:#8E1B2A;
+  --crimson-deep:#6E1420;
+  --signal:#FF0025;
+  --signal-soft:#FFE9EC;
+  --ink:#161721;
+  --grey:#7C818B;
+  --mist:#F6F3F1;
+  --line:#ECE7E3;
+  --white:#FFFFFF;
+  --radius:14px;
+  --shadow:0 10px 30px rgba(22,23,33,.08);
+  --display:'Quicksand',sans-serif;
+  --body:'Nunito Sans',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{font-family:var(--body);color:var(--ink);background:var(--white);line-height:1.65;font-size:16.5px}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.15;color:var(--crimson)}
+img{max-width:100%}
+a{color:var(--crimson)}
+button{font-family:var(--display);cursor:pointer}
+:focus-visible{outline:3px solid var(--signal);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.eyebrow{font-family:var(--display);font-weight:600;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--signal);display:block;margin-bottom:.9rem}
+.section{padding:84px 0}
+.section-title{font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:700;margin-bottom:.6rem}
+.section-lede{color:var(--grey);max-width:640px;margin-bottom:2.4rem}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{font-family:var(--display);font-weight:700;font-size:1.12rem;color:var(--crimson);text-decoration:none}
+.logo span{color:var(--signal)}
+.nav-links{display:flex;gap:26px;align-items:center;list-style:none}
+.nav-links a{font-family:var(--display);font-weight:600;font-size:.9rem;color:var(--ink);text-decoration:none}
+.nav-links a:hover{color:var(--signal)}
+.btn{display:inline-block;font-family:var(--display);font-weight:700;font-size:.95rem;padding:13px 26px;border-radius:8px;border:none;text-decoration:none;text-align:center;transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-red{background:var(--signal);color:#fff;box-shadow:0 6px 18px rgba(255,0,37,.28)}
+.btn-ghost{background:transparent;color:var(--crimson);border:2px solid var(--crimson)}
+.btn-quiet{background:var(--mist);color:var(--ink)}
+.nav .btn{padding:10px 20px}
+@media (max-width:720px){.nav-links li.hide-m{display:none}}
+
+/* ---------- hero ---------- */
+.hero{background:var(--mist);position:relative;overflow:hidden;padding:96px 0 130px}
+.hero .wrap{position:relative;z-index:2;max-width:760px;text-align:center}
+.hero h1{font-size:clamp(2.2rem,5.4vw,3.4rem);margin-bottom:1.1rem}
+.hero p{color:var(--grey);font-size:1.1rem;max-width:560px;margin:0 auto 2rem}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero-path{position:absolute;inset:auto 0 0 0;width:100%;height:auto;display:block;opacity:.5;pointer-events:none}
+.wave{display:block;width:100%;height:60px;margin-top:-1px}
+.wave path{fill:var(--mist)}
+.wave.flip{transform:scaleY(-1)}
+.wave.on-white path{fill:var(--white)}
+
+/* ---------- finder wizard ---------- */
+.wizard{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);max-width:720px;margin:0 auto;overflow:hidden}
+.wizard-head{display:flex;align-items:center;justify-content:space-between;padding:18px 26px;border-bottom:1px solid var(--line);background:var(--mist)}
+.wizard-steps{display:flex;gap:8px}
+.step-dot{width:34px;height:6px;border-radius:3px;background:var(--line);transition:background .25s}
+.step-dot.active{background:var(--signal)}
+.step-dot.done{background:var(--crimson)}
+.wizard-back{background:none;border:none;font-weight:600;font-size:.85rem;color:var(--grey);visibility:hidden}
+.wizard-back.show{visibility:visible}
+.wizard-body{padding:34px 30px 38px}
+.wizard-q{font-size:1.28rem;font-weight:700;color:var(--ink);font-family:var(--display);margin-bottom:1.4rem}
+.choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.choice-grid{grid-template-columns:1fr}}
+.choice{display:block;width:100%;text-align:left;background:var(--white);border:2px solid var(--line);border-radius:12px;padding:16px 18px;transition:border-color .15s,background .15s}
+.choice:hover{border-color:var(--signal)}
+.choice b{display:block;font-family:var(--display);font-size:1rem;color:var(--ink);margin-bottom:2px}
+.choice small{color:var(--grey);font-size:.85rem;line-height:1.4;display:block;font-family:var(--body)}
+.result-card{text-align:left}
+.result-card .eyebrow{margin-bottom:.4rem}
+.result-card h3{font-size:1.5rem;margin-bottom:.7rem}
+.result-card p{color:var(--grey);margin-bottom:1rem}
+.result-note{background:var(--signal-soft);border-radius:10px;padding:12px 16px;font-size:.9rem;color:var(--crimson-deep);margin-bottom:1.4rem}
+.result-actions{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ---------- services ---------- */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:900px){.svc-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.svc-grid{grid-template-columns:1fr}}
+.svc{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);transition:border-color .3s,opacity .3s;display:flex;flex-direction:column}
+.svc.dim{opacity:.38}
+.svc.lit{border-color:var(--signal)}
+.svc-ages{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--signal);font-family:var(--display);margin-bottom:.5rem}
+.svc h3{font-size:1.12rem;margin-bottom:.45rem}
+.svc p{color:var(--grey);font-size:.92rem;flex:1}
+.svc-more{margin-top:12px;background:none;border:none;color:var(--crimson);font-weight:700;font-size:.85rem;text-align:left;padding:0}
+.svc-more::after{content:' +'}
+.svc.open .svc-more::after{content:' −'}
+.svc-detail{display:none;margin-top:10px;font-size:.9rem;color:var(--ink);border-top:1px dashed var(--line);padding-top:10px}
+.svc.open .svc-detail{display:block}
+
+/* ---------- life path ---------- */
+.lifepath{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:34px 30px 26px;margin:0 0 40px}
+.lifepath h3{font-size:1.25rem;margin-bottom:.3rem}
+.lifepath .lp-sub{color:var(--grey);font-size:.92rem;margin-bottom:1.2rem}
+.lp-svg{width:100%;height:auto;display:block}
+.lp-track{fill:none;stroke:var(--line);stroke-width:5;stroke-linecap:round}
+.lp-fill{fill:none;stroke:var(--signal);stroke-width:5;stroke-linecap:round;transition:stroke-dashoffset .18s linear}
+.lp-walker{transition:transform .18s linear}
+.lp-labels{display:flex;justify-content:space-between;gap:8px;font-family:var(--display);font-weight:600;font-size:.75rem;color:var(--grey);margin-top:6px}
+@media (max-width:560px){.lp-labels span:nth-child(2),.lp-labels span:nth-child(4){display:none}}
+.lp-stage{text-align:center;font-family:var(--display);font-weight:700;color:var(--crimson);font-size:1.05rem;margin-top:14px;min-height:1.6em}
+input[type=range].lp-range{width:100%;margin-top:14px;accent-color:var(--signal);height:28px}
+
+/* ---------- faq ---------- */
+.faq{max-width:720px;margin:56px auto 0}
+.faq h3{font-size:1.35rem;margin-bottom:1.2rem}
+.faq-item{border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:var(--white)}
+.faq-q{width:100%;background:none;border:none;text-align:left;font-weight:700;font-size:.98rem;color:var(--ink);padding:16px 46px 16px 18px;position:relative}
+.faq-q::after{content:'+';position:absolute;right:18px;top:50%;transform:translateY(-50%);color:var(--signal);font-size:1.3rem;font-weight:500}
+.faq-item.open .faq-q::after{content:'−'}
+.faq-a{display:none;padding:0 18px 16px;color:var(--grey);font-size:.93rem}
+.faq-item.open .faq-a{display:block}
+
+/* ---------- check-in ---------- */
+.checkin{background:var(--mist)}
+.track-pick{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:720px}
+@media (max-width:640px){.track-pick{grid-template-columns:1fr}}
+.track-card{background:var(--white);border:2px solid var(--line);border-radius:var(--radius);padding:26px;text-align:left;transition:border-color .15s}
+.track-card:hover{border-color:var(--signal)}
+.track-card h3{font-size:1.15rem;margin-bottom:.4rem}
+.track-card p{color:var(--grey);font-size:.9rem;font-family:var(--body)}
+.quiz{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);max-width:720px;padding:30px;display:none}
+.quiz.show{display:block}
+.quiz-progress{font-family:var(--display);font-weight:600;font-size:.8rem;color:var(--grey);margin-bottom:.8rem}
+.quiz-q{font-family:var(--display);font-weight:700;font-size:1.15rem;margin-bottom:1.2rem}
+.quiz-opts{display:flex;flex-direction:column;gap:10px}
+.quiz-opts .choice{padding:13px 16px}
+.quiz-result h3{font-size:1.4rem;margin-bottom:.6rem}
+.quiz-result p{color:var(--grey);margin-bottom:1rem}
+.quiz-bar{height:10px;border-radius:5px;background:var(--line);overflow:hidden;margin:14px 0 6px}
+.quiz-bar i{display:block;height:100%;background:var(--signal);border-radius:5px}
+.quiz-bar-label{font-size:.8rem;color:var(--grey);margin-bottom:16px}
+.disclaimer{font-size:.82rem;color:var(--grey);background:var(--white);border:1px dashed var(--line);border-radius:10px;padding:12px 16px;max-width:720px;margin-top:22px}
+.checkin .disclaimer{background:rgba(255,255,255,.7)}
+
+/* ---------- booking ---------- */
+.booking-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:start}
+@media (max-width:820px){.booking-grid{grid-template-columns:1fr}}
+form.book{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:30px}
+.field{margin-bottom:16px}
+.field label{display:block;font-family:var(--display);font-weight:600;font-size:.85rem;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:9px;font-family:var(--body);font-size:.95rem;background:var(--white);color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--signal)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:520px){.field-row{grid-template-columns:1fr}}
+.book-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.book-hint{font-size:.82rem;color:var(--grey);margin-top:12px}
+.contact-side h2{margin-bottom:.6rem}
+.contact-side p{color:var(--grey);margin-bottom:1.4rem}
+.contact-list{list-style:none}
+.contact-list li{padding:13px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.contact-list b{font-family:var(--display);display:block;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--crimson);margin-bottom:2px}
+.contact-list a{text-decoration:none;font-weight:600}
+
+/* ---------- footer ---------- */
+footer{background:var(--crimson-deep);color:#E8C9CE;padding:44px 0;font-size:.88rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:#fff}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">Bikitsha<span> OT</span></a>
+    <ul class="nav-links">
+      <li class="hide-m"><a href="#finder">Find your service</a></li>
+      <li class="hide-m"><a href="#services">Services</a></li>
+      <li class="hide-m"><a href="#checkin">Check-in</a></li>
+      <li><a class="btn btn-red" href="#book">Request appointment</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">Bikitsha Occupational Therapy · Midrand &amp; Telehealth</span>
+    <h1>Your Well-Being is our Concern</h1>
+    <p>Occupation — purposeful, meaningful activity — is at the core of health. Answer a few questions and we'll point you to the right support, from prenatal stages through old age.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-red" href="#finder">Help me find the right service</a>
+      <a class="btn btn-ghost" href="#services">Browse all services</a>
+    </div>
+  </div>
+  <svg class="hero-path" viewBox="0 0 1200 120" aria-hidden="true" preserveAspectRatio="none">
+    <path d="M-20 100 C 200 40, 380 110, 600 70 S 1000 20, 1220 80" fill="none" stroke="#E3D6D2" stroke-width="3" stroke-dasharray="1 10" stroke-linecap="round"/>
+  </svg>
+</section>
+<svg class="wave flip" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0,60 C300,0 900,60 1200,10 L1200,60 L0,60 Z"/></svg>
+
+<!-- ================= FINDER ================= -->
+<section class="section" id="finder">
+  <div class="wrap" style="text-align:center">
+    <span class="eyebrow">Guided finder</span>
+    <h2 class="section-title">Find the right support</h2>
+    <p class="section-lede" style="margin-left:auto;margin-right:auto">Three quick questions. No forms, no jargon — just a clear starting point.</p>
+
+    <div class="wizard" id="wizard">
+      <div class="wizard-head">
+        <button class="wizard-back" id="wizBack" type="button">← Back</button>
+        <div class="wizard-steps" aria-hidden="true">
+          <span class="step-dot" data-step="0"></span>
+          <span class="step-dot" data-step="1"></span>
+          <span class="step-dot" data-step="2"></span>
+        </div>
+      </div>
+      <div class="wizard-body" id="wizBody" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<svg class="wave" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 C300,60 900,0 1200,50 L1200,60 L0,60 Z"/></svg>
+<section class="section checkin-alt" id="services" style="background:var(--mist);padding-top:60px">
+  <div class="wrap">
+    <span class="eyebrow">How we can help</span>
+    <h2 class="section-title">Services for every stage of life</h2>
+    <p class="section-lede">We work with people and communities — inter- and intra-personally — because the person who holds the problem also holds the solution.</p>
+
+    <div class="lifepath">
+      <h3>One practice, one lifetime</h3>
+      <p class="lp-sub">Slide along the life path to see which services are most relevant at each stage.</p>
+      <svg class="lp-svg" viewBox="0 0 1000 110" aria-hidden="true">
+        <path id="lpTrack" class="lp-track" d="M20 85 C 200 25, 350 95, 500 55 S 800 15, 980 60"/>
+        <path id="lpFill" class="lp-fill" d="M20 85 C 200 25, 350 95, 500 55 S 800 15, 980 60"/>
+        <g id="lpWalker" class="lp-walker">
+          <circle r="11" fill="#FF0025"/>
+          <circle r="4.5" fill="#fff"/>
+        </g>
+      </svg>
+      <div class="lp-labels" aria-hidden="true">
+        <span>Prenatal</span><span>Childhood</span><span>Adolescence</span><span>Adulthood</span><span>Old age</span>
+      </div>
+      <label for="lpRange" class="lp-stage" id="lpStage">Childhood · ages 2–12</label>
+      <input type="range" class="lp-range" id="lpRange" min="0" max="100" value="25" aria-label="Life stage, from prenatal to old age">
+    </div>
+
+    <div class="svc-grid" id="svcGrid">
+      <article class="svc" data-svc="paeds" data-min="0" data-max="30">
+        <div class="svc-ages">Prenatal – 12 yrs</div>
+        <h3>Paediatrics</h3>
+        <p>For children with developmental, learning and functional challenges — building success at home, at school and in the community.</p>
+        <button class="svc-more" type="button" aria-expanded="false">What this involves</button>
+        <div class="svc-detail">Play-based assessment and intervention for milestones, school readiness, handwriting, sensory processing and daily independence — with parents involved every step.</div>
+      </article>
+      <article class="svc" data-svc="adults" data-min="25" data-max="100">
+        <div class="svc-ages">Adolescents &amp; adults</div>
+        <h3>Adolescents &amp; Adults</h3>
+        <p>Life skills, emotional regulation and functional ability — using purposeful activity as the engine of recovery and growth.</p>
+        <button class="svc-more" type="button" aria-expanded="false">What this involves</button>
+        <div class="svc-detail">Individual sessions for stress, burnout, mental-health recovery and life transitions — practical, activity-based, and centred on what matters to you.</div>
+      </article>
+      <article class="svc" data-svc="group" data-min="15" data-max="100">
+        <div class="svc-ages">All ages</div>
+        <h3>Group-Based Intervention</h3>
+        <p>Social skills and interpersonal growth, developed where they're used — in a supportive group.</p>
+        <button class="svc-more" type="button" aria-expanded="false">What this involves</button>
+        <div class="svc-detail">Structured groups that practise communication, conflict resolution and connection in real time, guided by an occupational therapist.</div>
+      </article>
+      <article class="svc" data-svc="work" data-min="40" data-max="90">
+        <div class="svc-ages">Working adults</div>
+        <h3>Work-Based Intervention</h3>
+        <p>Person–job fit and employee wellness, for individuals and corporate clients.</p>
+        <button class="svc-more" type="button" aria-expanded="false">What this involves</button>
+        <div class="svc-detail">Workplace assessments, return-to-work planning and wellness programmes that keep people functioning well in the roles that matter to them.</div>
+      </article>
+      <article class="svc" data-svc="fce" data-min="35" data-max="100">
+        <div class="svc-ages">After injury or illness</div>
+        <h3>Full Functional Capacity Evaluation</h3>
+        <p>A standardised, comprehensive assessment of the physical, psychosocial and cognitive impact of injury or illness.</p>
+        <button class="svc-more" type="button" aria-expanded="false">What this involves</button>
+        <div class="svc-detail">An objective, evidence-based picture of current functional ability — often the first step in planning rehabilitation or a return to work.</div>
+      </article>
+      <article class="svc" data-svc="legal" data-min="0" data-max="100">
+        <div class="svc-ages">Nationwide</div>
+        <h3>Medico-Legal Services</h3>
+        <p>Assessing and reporting on functional levels of clients affected by injury, accident or medical negligence.</p>
+        <button class="svc-more" type="button" aria-expanded="false">What this involves</button>
+        <div class="svc-detail">Independent assessments and reports for legal matters, provided from private hospitals in Gauteng and at external locations throughout South Africa.</div>
+      </article>
+    </div>
+
+    <div class="faq">
+      <h3>Common questions</h3>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">Where do sessions take place?</button>
+        <div class="faq-a">Our rooms are at Life Carstenview Hospital, 181 Bekker Road, Vorna Valley, Midrand. Telehealth sessions are also available, and medico-legal assessments can be arranged throughout South Africa.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">What happens in a first session?</button>
+        <div class="faq-a">We start with a conversation and an assessment: understanding you, your context and the activities that matter in your daily life. From there we agree on goals and a plan together.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">Do I need a referral first?</button>
+        <div class="faq-a">You're welcome to contact us directly — we'll let you know if anything else is needed for your situation, and we work alongside doctors, schools and employers where helpful.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">What about fees and medical aid?</button>
+        <div class="faq-a">Fees depend on the service and assessment involved. Contact us on WhatsApp or email and we'll gladly talk you through costs and medical-aid options before you commit to anything.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">Is telehealth as effective as in-person?</button>
+        <div class="faq-a">For many concerns — especially mental-health and workplace support — telehealth works well and removes travel barriers. Some assessments do need to happen in person; we'll advise you honestly when you book.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<svg class="wave on-white" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 C300,60 900,0 1200,50 L1200,60 L0,60 Z" fill="#fff"/></svg>
+
+<!-- ================= CHECK-IN ================= -->
+<section class="section" id="checkin">
+  <div class="wrap">
+    <span class="eyebrow">Self check-in</span>
+    <h2 class="section-title">Not sure if it's "enough of a thing"?</h2>
+    <p class="section-lede">A two-minute, judgement-free check-in. It won't diagnose anything — it simply helps you notice patterns worth a conversation.</p>
+
+    <div class="track-pick" id="trackPick">
+      <button class="track-card" type="button" data-track="parent">
+        <h3>For my child</h3>
+        <p>A short developmental check-in for parents and caregivers — play, school, movement and emotions.</p>
+      </button>
+      <button class="track-card" type="button" data-track="adult">
+        <h3>For myself</h3>
+        <p>A stress and daily-functioning check-in for adolescents and adults — energy, focus, sleep and connection.</p>
+      </button>
+    </div>
+
+    <div class="quiz" id="quiz" aria-live="polite"></div>
+
+    <p class="disclaimer"><strong>Please note:</strong> this check-in is an educational guide, not a medical or diagnostic tool. It cannot replace a professional assessment. If you are worried about your or your child's safety or health, please contact a healthcare professional directly.</p>
+  </div>
+</section>
+
+<!-- ================= BOOKING ================= -->
+<svg class="wave" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 C300,60 900,0 1200,50 L1200,60 L0,60 Z"/></svg>
+<section class="section" id="book" style="background:var(--mist);padding-top:60px">
+  <div class="wrap booking-grid">
+    <div class="contact-side">
+      <span class="eyebrow">Request an appointment</span>
+      <h2 class="section-title">Let's take the first step</h2>
+      <p>Fill in what you can — we'll compose a WhatsApp message for you to review and send. Nothing is sent until you press send yourself. Prefer email? That works too.</p>
+      <ul class="contact-list">
+        <li><b>Practice rooms</b>Life Carstenview Hospital, 181 Bekker Road, Vorna Valley, Midrand, 1685</li>
+        <li><b>WhatsApp</b><a href="https://wa.me/27615040294">+27 61 504 0294</a></li>
+        <li><b>Email</b><a href="mailto:admin@bikitshaot.co.za">admin@bikitshaot.co.za</a></li>
+        <li><b>Consultations</b>In-person in Midrand · Telehealth nationwide · Medico-legal across South Africa</li>
+      </ul>
+    </div>
+
+    <form class="book" id="bookForm">
+      <div class="field">
+        <label for="bkService">Service</label>
+        <select id="bkService" required>
+          <option value="">Choose a service…</option>
+          <option>Paediatrics</option>
+          <option>Adolescents &amp; Adults</option>
+          <option>Group-Based Intervention</option>
+          <option>Work-Based Intervention</option>
+          <option>Full Functional Capacity Evaluation</option>
+          <option>Medico-Legal Services</option>
+          <option>Not sure yet — please advise</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="bkType">Consultation type</label>
+        <select id="bkType">
+          <option>No preference</option>
+          <option>In-person (Midrand)</option>
+          <option>Telehealth</option>
+        </select>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="bkDate">Preferred date</label>
+          <input type="date" id="bkDate">
+        </div>
+        <div class="field">
+          <label for="bkTime">Preferred time</label>
+          <select id="bkTime">
+            <option>Any time</option>
+            <option>Morning</option>
+            <option>Midday</option>
+            <option>Afternoon</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="bkName">Your name</label>
+        <input type="text" id="bkName" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="bkNote">Anything you'd like us to know? <span style="color:var(--grey);font-weight:400">(optional)</span></label>
+        <textarea id="bkNote" rows="3"></textarea>
+      </div>
+      <div class="book-actions">
+        <button class="btn btn-red" type="submit">Compose WhatsApp message</button>
+        <button class="btn btn-quiet" type="button" id="bkEmail">Compose email instead</button>
+      </div>
+      <p class="book-hint">Opens WhatsApp or your mail app with the message pre-written — you review it and press send.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <strong style="font-family:var(--display);color:#fff">Bikitsha Occupational Therapy</strong><br>
+      Empowering clients to reach their full potential — since 2015.
+    </div>
+    <div>
+      Life Carstenview Hospital, 181 Bekker Road,<br>Vorna Valley, Midrand, 1685<br>
+      <a href="https://wa.me/27615040294">WhatsApp us</a> · <a href="mailto:admin@bikitshaot.co.za">admin@bikitshaot.co.za</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =============== data =============== */
+const SERVICES = {
+  paeds:{name:'Paediatrics', blurb:'Play-based therapy that helps children master the developmental, learning and functional skills they need at home, at school and in the community.'},
+  adults:{name:'Adolescents & Adults', blurb:'One-on-one occupational therapy building life skills, emotional regulation and day-to-day functioning through purposeful activity.'},
+  group:{name:'Group-Based Intervention', blurb:'A supportive group setting for developing social skills and working through interpersonal challenges where they actually happen — with other people.'},
+  work:{name:'Work-Based Intervention', blurb:'Evaluating person–job fit and supporting employee wellness — for individuals, teams and corporate clients.'},
+  fce:{name:'Full Functional Capacity Evaluation', blurb:'A standardised, comprehensive assessment of how injury or illness has affected physical, psychosocial and cognitive functioning.'},
+  legal:{name:'Medico-Legal Services', blurb:'Independent assessment and reporting on functional levels for clients affected by injury, accident or medical negligence — available throughout South Africa.'}
+};
+
+/* =============== wizard =============== */
+const WIZ = {
+  who:{
+    q:'Who needs support?',
+    opts:[
+      {t:'My child', s:'Development, school, play or emotions', next:'concernChild'},
+      {t:'Myself', s:'An adolescent or adult seeking support', next:'concernSelf'},
+      {t:'My employees or workplace', s:'Corporate wellness or person–job fit', pick:'work', skip:true},
+      {t:'A legal or medical claim', s:'Injury, accident or negligence matter', pick:'legal', skip:true}
+    ]
+  },
+  concernChild:{
+    q:'What feels like the main concern?',
+    opts:[
+      {t:'Milestones & development', s:'Movement, coordination, everyday skills', pick:'paeds'},
+      {t:'School & learning', s:'Concentration, handwriting, school readiness', pick:'paeds'},
+      {t:'Friendships & social skills', s:'Connecting and getting along with others', pick:'group'},
+      {t:'Big emotions', s:'Regulation, meltdowns, anxiety at home or school', pick:'paeds'}
+    ]
+  },
+  concernSelf:{
+    q:'What feels like the main concern?',
+    opts:[
+      {t:'Stress & emotional well-being', s:'Burnout, low mood, feeling stuck', pick:'adults'},
+      {t:'Recovering function', s:'After an injury, illness or hospital stay', pick:'fce'},
+      {t:'People & relationships', s:'Social confidence, conflict, connection', pick:'group'},
+      {t:'Coping at work', s:'Struggling to manage or return to a job', pick:'work'}
+    ]
+  },
+  format:{
+    q:'How would you prefer to meet?',
+    opts:[
+      {t:'In person', s:'At our rooms in Life Carstenview Hospital, Midrand', fmt:'In-person (Midrand)'},
+      {t:'Telehealth', s:'A video consultation from wherever you are', fmt:'Telehealth'},
+      {t:'Not sure yet', s:'Happy to be advised on what fits best', fmt:'No preference'}
+    ]
+  }
+};
+
+const wizBody = document.getElementById('wizBody');
+const wizBack = document.getElementById('wizBack');
+let wizHistory = [];
+let wizState = {pick:null, fmt:null};
+
+function setDots(n, done){
+  document.querySelectorAll('.step-dot').forEach((d,i)=>{
+    d.classList.toggle('active', i===n && !done);
+    d.classList.toggle('done', i<n || done);
+  });
+}
+
+function renderWiz(key){
+  const node = WIZ[key];
+  const stepNum = wizHistory.length;
+  setDots(stepNum, false);
+  wizBack.classList.toggle('show', stepNum>0);
+  wizBody.innerHTML = `<div class="wizard-q">${node.q}</div><div class="choice-grid">` +
+    node.opts.map((o,i)=>`<button class="choice" type="button" data-i="${i}"><b>${o.t}</b><small>${o.s}</small></button>`).join('') + `</div>`;
+  wizBody.querySelectorAll('.choice').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const o = node.opts[btn.dataset.i];
+      wizHistory.push(key);
+      if(o.pick) wizState.pick = o.pick;
+      if(o.fmt){ wizState.fmt = o.fmt; return renderResult(); }
+      if(o.skip || o.pick) return renderWiz('format');
+      renderWiz(o.next);
+    });
+  });
+}
+
+function renderResult(){
+  const svc = SERVICES[wizState.pick];
+  setDots(3, true);
+  wizBack.classList.add('show');
+  const fmtLine = wizState.pick==='legal'
+    ? 'Medico-legal assessments are arranged from private hospitals in Gauteng and external locations across South Africa.'
+    : `Preference noted: <strong>${wizState.fmt}</strong>.`;
+  wizBody.innerHTML = `
+    <div class="result-card">
+      <span class="eyebrow">Our recommendation</span>
+      <h3>${svc.name}</h3>
+      <p>${svc.blurb}</p>
+      <div class="result-note">${fmtLine} We'll confirm the best fit with you before anything is booked.</div>
+      <div class="result-actions">
+        <button class="btn btn-red" type="button" id="wizBook">Book ${svc.name}</button>
+        <button class="btn btn-quiet" type="button" id="wizRestart">Start over</button>
+      </div>
+    </div>`;
+  document.getElementById('wizBook').addEventListener('click',()=>{
+    prefillBooking(svc.name, wizState.fmt);
+    document.getElementById('book').scrollIntoView({behavior:'smooth'});
+  });
+  document.getElementById('wizRestart').addEventListener('click', resetWiz);
+}
+
+function resetWiz(){ wizHistory=[]; wizState={pick:null,fmt:null}; renderWiz('who'); }
+wizBack.addEventListener('click',()=>{
+  const prev = wizHistory.pop();
+  if(prev) renderWiz(prev); else resetWiz();
+});
+resetWiz();
+
+/* =============== life path =============== */
+const lpTrack = document.getElementById('lpTrack');
+const lpFill = document.getElementById('lpFill');
+const lpWalker = document.getElementById('lpWalker');
+const lpRange = document.getElementById('lpRange');
+const lpStage = document.getElementById('lpStage');
+const lpLen = lpTrack.getTotalLength();
+lpFill.style.strokeDasharray = lpLen;
+const STAGES = [
+  [0,'Prenatal & infancy · the very beginning'],
+  [15,'Childhood · ages 2–12'],
+  [35,'Adolescence · ages 13–17'],
+  [50,'Adulthood · working years'],
+  [80,'Later adulthood'],
+  [92,'Old age · staying engaged']
+];
+function updatePath(){
+  const v = +lpRange.value;
+  lpFill.style.strokeDashoffset = lpLen * (1 - v/100);
+  const pt = lpTrack.getPointAtLength(lpLen * v/100);
+  lpWalker.setAttribute('transform',`translate(${pt.x} ${pt.y})`);
+  let label = STAGES[0][1];
+  for(const [min,l] of STAGES){ if(v>=min) label=l; }
+  lpStage.textContent = label;
+  document.querySelectorAll('.svc').forEach(card=>{
+    const inRange = v >= +card.dataset.min && v <= +card.dataset.max;
+    card.classList.toggle('lit', inRange);
+    card.classList.toggle('dim', !inRange);
+  });
+}
+lpRange.addEventListener('input', updatePath);
+updatePath();
+
+/* =============== service cards + faq =============== */
+document.querySelectorAll('.svc-more').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const open = btn.closest('.svc').classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+});
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const open = btn.closest('.faq-item').classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+});
+
+/* =============== check-in quiz =============== */
+const QUIZZES = {
+  parent:{
+    title:'Child development check-in',
+    service:'Paediatrics',
+    scale:[['Rarely / never',0],['Sometimes',1],['Often',2]],
+    items:[
+      'My child finds everyday tasks (dressing, eating, packing a bag) harder than other children their age.',
+      'Teachers mention concentration, sitting still or keeping up in class.',
+      'Handwriting, drawing or using scissors is a real struggle.',
+      'My child avoids playground games, climbing or ball games.',
+      'Big emotions — meltdowns or shutdowns — happen more days than not.',
+      'Making or keeping friends is hard for my child.',
+      'Certain textures, sounds or busy places upset my child more than expected.',
+      'I have a nagging feeling something is being missed.'
+    ],
+    bands:[
+      [4,'Things look broadly on track','Nothing here suggests an urgent concern. Keep playing, keep talking — and trust your instincts. If a specific worry persists, an occupational therapist can give you clarity in a single consultation.'],
+      [9,'Worth a conversation','A few patterns here are the kind occupational therapists see — and help with — every day. A once-off assessment could either reassure you or give you a practical plan. Early support makes a real difference.'],
+      [99,'We\'d encourage an assessment','You\'ve noticed quite a few things — and noticing is the most important step. This does not mean anything is "wrong", but a paediatric OT assessment would give you real answers instead of worry.']
+    ]
+  },
+  adult:{
+    title:'Stress & daily-functioning check-in',
+    service:'Adolescents & Adults',
+    scale:[['Rarely / never',0],['Some days',1],['Most days',2]],
+    items:[
+      'I feel drained before the day has even started.',
+      'Tasks I used to manage easily now feel like mountains.',
+      'My sleep is broken, short, or never feels like enough.',
+      'I\'ve stopped doing activities that used to give me joy or meaning.',
+      'Concentrating at work or school takes everything I have.',
+      'I feel disconnected from the people around me.',
+      'Small frustrations tip me into anger or tears.',
+      'I can\'t remember the last time I felt genuinely well.'
+    ],
+    bands:[
+      [4,'You\'re managing — keep tending the basics','Your load seems manageable right now. Protect the routines that keep you well: sleep, movement, connection and activities that mean something to you.'],
+      [9,'Your load is worth taking seriously','Several signs of strain show up here. Occupational therapy is practical: together we rebuild the daily structures — rest, work, connection, meaning — that carry you. One conversation is a good place to start.'],
+      [99,'Please don\'t carry this alone','You\'re carrying a lot, most days. That deserves proper support, not just pushing through. We\'d encourage you to book a consultation — and if you ever feel unsafe, please contact a healthcare professional or emergency service immediately.']
+    ]
+  }
+};
+
+const quizEl = document.getElementById('quiz');
+const trackPick = document.getElementById('trackPick');
+let quiz = null;
+
+document.querySelectorAll('.track-card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    quiz = {def:QUIZZES[card.dataset.track], i:0, score:0};
+    trackPick.style.display='none';
+    quizEl.classList.add('show');
+    renderQuizQ();
+    quizEl.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+});
+
+function renderQuizQ(){
+  const {def,i} = quiz;
+  quizEl.innerHTML = `
+    <div class="quiz-progress">${def.title} · question ${i+1} of ${def.items.length}</div>
+    <div class="quiz-q">${def.items[i]}</div>
+    <div class="quiz-opts">` +
+      def.scale.map(([label,val])=>`<button class="choice" type="button" data-v="${val}"><b>${label}</b></button>`).join('') +
+    `</div>`;
+  quizEl.querySelectorAll('.choice').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      quiz.score += +btn.dataset.v;
+      quiz.i++;
+      quiz.i < quiz.def.items.length ? renderQuizQ() : renderQuizResult();
+    });
+  });
+}
+
+function renderQuizResult(){
+  const {def,score} = quiz;
+  const max = def.items.length * 2;
+  const band = def.bands.find(([cap])=>score<=cap);
+  quizEl.innerHTML = `
+    <div class="quiz-result">
+      <span class="eyebrow">Your check-in</span>
+      <h3>${band[1]}</h3>
+      <div class="quiz-bar"><i style="width:${Math.max(4, score/max*100)}%"></i></div>
+      <div class="quiz-bar-label">${score} of ${max} — higher simply means more patterns worth discussing.</div>
+      <p>${band[2]}</p>
+      <div class="result-actions">
+        <button class="btn btn-red" type="button" id="quizBook">Request an appointment</button>
+        <button class="btn btn-quiet" type="button" id="quizAgain">Retake or switch</button>
+      </div>
+    </div>`;
+  document.getElementById('quizBook').addEventListener('click',()=>{
+    prefillBooking(def.service, null);
+    document.getElementById('book').scrollIntoView({behavior:'smooth'});
+  });
+  document.getElementById('quizAgain').addEventListener('click',()=>{
+    quizEl.classList.remove('show');
+    trackPick.style.display='';
+  });
+}
+
+/* =============== booking =============== */
+function prefillBooking(serviceName, fmt){
+  const svcSel = document.getElementById('bkService');
+  [...svcSel.options].forEach(o=>{ if(o.text.replace('&amp;','&')===serviceName) svcSel.value=o.value||o.text; });
+  svcSel.value = [...svcSel.options].find(o=>o.text===serviceName)?.text ?? svcSel.value;
+  if(fmt){ document.getElementById('bkType').value = fmt; }
+}
+
+function composeMessage(){
+  const g = id=>document.getElementById(id).value.trim();
+  const service=g('bkService'), type=g('bkType'), date=g('bkDate'), time=g('bkTime'), name=g('bkName'), note=g('bkNote');
+  let lines = [`Hello Bikitsha OT, I'd like to request an appointment.`];
+  if(name) lines.push(`Name: ${name}`);
+  if(service) lines.push(`Service: ${service}`);
+  if(type && type!=='No preference') lines.push(`Consultation: ${type}`);
+  if(date) lines.push(`Preferred date: ${date}${time && time!=='Any time' ? ' ('+time.toLowerCase()+')' : ''}`);
+  else if(time && time!=='Any time') lines.push(`Preferred time of day: ${time}`);
+  if(note) lines.push(`Note: ${note}`);
+  return lines.join('\n');
+}
+
+document.getElementById('bookForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  window.open('https://wa.me/27615040294?text='+encodeURIComponent(composeMessage()),'_blank');
+});
+document.getElementById('bkEmail').addEventListener('click',()=>{
+  const form = document.getElementById('bookForm');
+  if(!form.reportValidity()) return;
+  window.location.href = 'mailto:admin@bikitshaot.co.za?subject='+encodeURIComponent('Appointment request')+'&body='+encodeURIComponent(composeMessage());
+});
+</script>
+</body>
+</html>
