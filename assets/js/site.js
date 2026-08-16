@@ -5,16 +5,7 @@
 var WA = 'https://wa.me/27615040294';
 var EMAIL = 'admin@bikitshaot.co.za';
 
-/* =============== WHO-style nav: mobile toggle + dropdowns =============== */
-var navToggle = document.querySelector('.nav-toggle');
-var topnav = document.querySelector('.topnav');
-if(navToggle && topnav){
-  navToggle.addEventListener('click', function(){
-    var open = topnav.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', open);
-    if(!open) closeMenus();
-  });
-}
+/* =============== WHO-style nav dropdowns =============== */
 function closeMenus(except){
   document.querySelectorAll('.tn-item.open').forEach(function(it){
     if(it!==except){

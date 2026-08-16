@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "bikitsha-site",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8742", "--directory", "/Users/alpha/Projects/OpCan/BIKITSHAOT"],
+      "port": 8742
+    }
+  ]
+}

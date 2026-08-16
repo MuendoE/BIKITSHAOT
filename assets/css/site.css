@@ -64,26 +64,19 @@ header.site{position:sticky;top:0;z-index:50;background:var(--white)}
 .tn-menu .tn-menu-head{display:block;padding:10px 20px 6px;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);font-family:var(--display)}
 .tn-menu hr{border:none;border-top:1px solid var(--line);margin:6px 0}
 
-.nav-toggle{display:none;background:none;border:none;width:44px;height:44px;position:relative}
-.nav-toggle i,.nav-toggle i::before,.nav-toggle i::after{content:'';display:block;position:absolute;height:2.5px;border-radius:2px;background:var(--crimson);transition:transform .2s,opacity .2s}
-.nav-toggle i{top:21px;left:10px;right:10px}
-.nav-toggle i::before,.nav-toggle i::after{left:0;right:0}
-.nav-toggle i::before{top:-8px}
-.nav-toggle i::after{top:8px}
-
 @media (max-width:880px){
-  .nav-toggle{display:block}
-  .topnav{display:none}
-  .topnav.open{display:block;position:fixed;inset:64px 0 0 0;overflow-y:auto;background:var(--crimson-deep)}
-  .topnav .wrap{flex-direction:column;align-items:stretch;padding:10px 0 30px}
-  .tn-home{display:none}
-  .tn-link{width:100%;justify-content:space-between;height:auto;padding:15px 26px;font-size:1rem;border-bottom:1px solid rgba(255,255,255,.12)}
-  .tn-link[aria-current="page"]{box-shadow:inset 3px 0 0 var(--signal)}
-  .tn-menu{position:static;min-width:0;border:none;border-radius:0;box-shadow:none;background:rgba(255,255,255,.07);padding:4px 0}
-  .tn-menu a{color:#fff;padding:12px 26px 12px 40px}
-  .tn-menu a:hover,.tn-menu a:focus-visible{background:rgba(255,255,255,.12);color:#fff}
-  .tn-menu .tn-menu-head{color:#E8C9CE}
-  .tn-menu hr{border-top-color:rgba(255,255,255,.15)}
+  /* keep the WHO-style bar visible on phones: swipeable row + full-width dropdown sheets */
+  .topnav .wrap{justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 6px}
+  .topnav .wrap::-webkit-scrollbar{display:none}
+  .tn-home{padding:0 14px}
+  .tn-item{position:static}
+  .tn-link{height:48px;padding:0 14px;font-size:.88rem}
+  .tn-menu{position:fixed;left:0;right:0;top:112px;min-width:0;border-radius:0;max-height:calc(100vh - 112px);overflow-y:auto}
+}
+@media (max-width:560px){
+  .masthead .wrap{height:56px}
+  .logo img{height:38px;width:38px}
+  .tn-menu{top:104px}
 }
 
 /* ---------- hero carousel ---------- */
