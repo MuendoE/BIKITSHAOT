@@ -5,15 +5,56 @@
 var WA = 'https://wa.me/27615040294';
 var EMAIL = 'admin@bikitshaot.co.za';
 
-/* =============== mobile nav =============== */
+/* =============== WHO-style nav: mobile toggle + dropdowns =============== */
 var navToggle = document.querySelector('.nav-toggle');
-if(navToggle){
-  var navLinks = document.querySelector('.nav-links');
+var topnav = document.querySelector('.topnav');
+if(navToggle && topnav){
   navToggle.addEventListener('click', function(){
-    var open = navLinks.classList.toggle('open');
+    var open = topnav.classList.toggle('open');
     navToggle.setAttribute('aria-expanded', open);
+    if(!open) closeMenus();
   });
 }
+function closeMenus(except){
+  document.querySelectorAll('.tn-item.open').forEach(function(it){
+    if(it!==except){
+      it.classList.remove('open');
+      var b = it.querySelector('.tn-link');
+      if(b && b.tagName==='BUTTON') b.setAttribute('aria-expanded','false');
+    }
+  });
+}
+document.querySelectorAll('.tn-item').forEach(function(item){
+  var btn = item.querySelector('button.tn-link');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    /* if hover already opened it, a click should not immediately close it */
+    if(item._hoverOpened){ item._hoverOpened = false; return; }
+    var open = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    if(open) closeMenus(item);
+  });
+  /* hover intent on desktop pointers */
+  if(window.matchMedia('(hover: hover) and (min-width: 881px)').matches){
+    item.addEventListener('mouseenter', function(){
+      closeMenus(item);
+      item.classList.add('open');
+      item._hoverOpened = true;
+      btn.setAttribute('aria-expanded','true');
+    });
+    item.addEventListener('mouseleave', function(){
+      item.classList.remove('open');
+      item._hoverOpened = false;
+      btn.setAttribute('aria-expanded','false');
+    });
+  }
+});
+document.addEventListener('click', function(e){
+  if(!e.target.closest('.topnav')) closeMenus();
+});
+document.addEventListener('keydown', function(e){
+  if(e.key==='Escape') closeMenus();
+});
 
 /* =============== hero carousel =============== */
 var car = document.querySelector('.carousel');

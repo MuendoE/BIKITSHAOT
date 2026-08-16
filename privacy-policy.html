@@ -14,18 +14,65 @@
 <body>
 
 <header class="site">
-  <div class="wrap nav">
-    <a class="logo" href="index.html"><img src="assets/img/logo.png" alt="">Bikitsha<span> OT</span></a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><i></i></button>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="about-us.html">About us</a></li>
-      <li><a href="health-blog.html">Health blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a class="btn btn-red" href="contact.html#book">Request appointment</a></li>
-    </ul>
+  <div class="masthead">
+    <div class="wrap">
+      <a class="logo" href="index.html"><img src="assets/img/logo.png" alt="">Bikitsha<span> OT</span></a>
+      <div style="display:flex;align-items:center;gap:8px">
+        <a class="btn btn-red" href="contact.html#book">Request appointment</a>
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><i></i></button>
+      </div>
+    </div>
   </div>
+  <nav class="topnav" aria-label="Main menu">
+    <div class="wrap">
+      <a class="tn-home" href="index.html" aria-label="Home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 11h2.5v9H10v-6h4v6h5.5v-9H22L12 3z"/></svg></a>
+      <div class="tn-item">
+        <button class="tn-link" type="button" aria-expanded="false">Services <span class="tn-caret"></span></button>
+        <div class="tn-menu">
+          <a href="services.html">All services</a>
+          <hr>
+          <a href="services.html#medico-legal">Medico-Legal Services</a>
+          <a href="services.html#paediatrics">Paediatrics</a>
+          <a href="services.html#adolescents-adults">Adolescents &amp; Adults</a>
+          <a href="services.html#group">Group-Based Intervention</a>
+          <a href="services.html#work">Work-Based Intervention</a>
+          <a href="services.html#fce">Functional Capacity Evaluation</a>
+        </div>
+      </div>
+      <div class="tn-item">
+        <button class="tn-link" type="button" aria-expanded="false">Find support <span class="tn-caret"></span></button>
+        <div class="tn-menu">
+          <span class="tn-menu-head">Interactive tools</span>
+          <a href="index.html#finder">Guided service finder</a>
+          <a href="index.html#checkin">Two-minute check-in</a>
+          <a href="index.html#services">Life-path explorer</a>
+          <hr>
+          <a href="contact.html#book">Request an appointment</a>
+        </div>
+      </div>
+      <div class="tn-item">
+        <button class="tn-link" type="button" aria-expanded="false">Newsroom <span class="tn-caret"></span></button>
+        <div class="tn-menu">
+          <a href="health-blog.html">Health blog</a>
+          <a href="index.html#news">Latest from the practice</a>
+          <hr>
+          <a href="the-power-of-occupational-therapy.html">The Power of Occupational Therapy</a>
+        </div>
+      </div>
+      <div class="tn-item">
+        <button class="tn-link" type="button" aria-expanded="false">About us <span class="tn-caret"></span></button>
+        <div class="tn-menu">
+          <a href="about-us.html">About the practice</a>
+          <a href="index.html#core">Our philosophy</a>
+          <hr>
+          <a href="privacy-policy.html">Privacy policy</a>
+        </div>
+      </div>
+      <div class="tn-item">
+        <a class="tn-link" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
 </header>
 
 <section class="section" style="padding-top:56px">
