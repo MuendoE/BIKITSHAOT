@@ -118,10 +118,10 @@ if(wizBody){
   var SERVICES = {
     paeds:{name:'Paediatrics', blurb:'Play-based therapy that helps children master the developmental, learning and functional skills they need at home, at school and in the community.'},
     adults:{name:'Adolescents & Adults', blurb:'One-on-one occupational therapy building life skills, emotional regulation and day-to-day functioning through purposeful activity.'},
-    group:{name:'Group-Based Intervention', blurb:'A supportive group setting for developing social skills and working through interpersonal challenges where they actually happen — with other people.'},
-    work:{name:'Work-Based Intervention', blurb:'Evaluating person–job fit and supporting employee wellness — for individuals, teams and corporate clients.'},
+    group:{name:'Group-Based Intervention', blurb:'A supportive group setting for developing social skills and working through interpersonal challenges where they actually happen, with other people.'},
+    work:{name:'Work-Based Intervention', blurb:'Evaluating person–job fit and supporting employee wellness, for individuals, teams and corporate clients.'},
     fce:{name:'Full Functional Capacity Evaluation', blurb:'A standardised, comprehensive assessment of how injury or illness has affected physical, psychosocial and cognitive functioning.'},
-    legal:{name:'Medico-Legal Services', blurb:'Independent assessment and reporting on functional levels for clients affected by injury, accident or medical negligence — available throughout South Africa.'}
+    legal:{name:'Medico-Legal Services', blurb:'Independent assessment and reporting on functional levels for clients affected by injury, accident or medical negligence, available throughout South Africa.'}
   };
   var WIZ = {
     who:{ q:'Who needs support?', opts:[
@@ -220,15 +220,15 @@ if(quizEl){
         'Teachers mention concentration, sitting still or keeping up in class.',
         'Handwriting, drawing or using scissors is a real struggle.',
         'My child avoids playground games, climbing or ball games.',
-        'Big emotions — meltdowns or shutdowns — happen more days than not.',
+        'Big emotions, meltdowns or shutdowns, happen more days than not.',
         'Making or keeping friends is hard for my child.',
         'Certain textures, sounds or busy places upset my child more than expected.',
         'I have a nagging feeling something is being missed.'
       ],
       bands:[
-        [4,'Things look broadly on track','Nothing here suggests an urgent concern. Keep playing, keep talking — and trust your instincts. If a specific worry persists, an occupational therapist can give you clarity in a single consultation.'],
-        [9,'Worth a conversation','A few patterns here are the kind occupational therapists see — and help with — every day. A once-off assessment could either reassure you or give you a practical plan. Early support makes a real difference.'],
-        [99,'We\'d encourage an assessment','You\'ve noticed quite a few things — and noticing is the most important step. This does not mean anything is "wrong", but a paediatric OT assessment would give you real answers instead of worry.']
+        [4,'Things look broadly on track','Nothing here suggests an urgent concern. Keep playing, keep talking, and trust your instincts. If a specific worry persists, an occupational therapist can give you clarity in a single consultation.'],
+        [9,'Worth a conversation','A few patterns here are the kind occupational therapists see, and help with, every day. A once-off assessment could either reassure you or give you a practical plan. Early support makes a real difference.'],
+        [99,'We\'d encourage an assessment','You\'ve noticed quite a few things, and noticing is the most important step. This does not mean anything is "wrong", but a paediatric OT assessment would give you real answers instead of worry.']
       ]
     },
     adult:{
@@ -246,9 +246,9 @@ if(quizEl){
         'I can\'t remember the last time I felt genuinely well.'
       ],
       bands:[
-        [4,'You\'re managing — keep tending the basics','Your load seems manageable right now. Protect the routines that keep you well: sleep, movement, connection and activities that mean something to you.'],
-        [9,'Your load is worth taking seriously','Several signs of strain show up here. Occupational therapy is practical: together we rebuild the daily structures — rest, work, connection, meaning — that carry you. One conversation is a good place to start.'],
-        [99,'Please don\'t carry this alone','You\'re carrying a lot, most days. That deserves proper support, not just pushing through. We\'d encourage you to book a consultation — and if you ever feel unsafe, please contact a healthcare professional or emergency service immediately.']
+        [4,'You\'re managing: keep tending the basics','Your load seems manageable right now. Protect the routines that keep you well: sleep, movement, connection and activities that mean something to you.'],
+        [9,'Your load is worth taking seriously','Several signs of strain show up here. Occupational therapy is practical: together we rebuild the daily structures that carry you: rest, work, connection, meaning. One conversation is a good place to start.'],
+        [99,'Please don\'t carry this alone','You\'re carrying a lot, most days. That deserves proper support, not just pushing through. We\'d encourage you to book a consultation, and if you ever feel unsafe, please contact a healthcare professional or emergency service immediately.']
       ]
     }
   };
@@ -291,7 +291,7 @@ if(quizEl){
         '<span class="eyebrow">Your check-in</span>'+
         '<h3>'+band[1]+'</h3>'+
         '<div class="quiz-bar"><i style="width:'+Math.max(4, score/max*100)+'%"></i></div>'+
-        '<div class="quiz-bar-label">'+score+' of '+max+' — higher simply means more patterns worth discussing.</div>'+
+        '<div class="quiz-bar-label">'+score+' of '+max+'. Higher simply means more patterns worth discussing.</div>'+
         '<p>'+band[2]+'</p>'+
         '<div class="result-actions">'+
           '<button class="btn btn-red" type="button" id="quizBook">Request an appointment</button>'+
@@ -358,17 +358,17 @@ if(bookForm){
     {
       keys:['service','offer','help with','what do you do','therapy types'],
       chip:'Our services',
-      a:'We offer six core services: <b>Paediatrics</b>, <b>Adolescents & Adults</b>, <b>Group-Based Intervention</b>, <b>Work-Based Intervention</b>, <b>Full Functional Capacity Evaluations</b> and <b>Medico-Legal Services</b> (nationwide). See <a href="services.html">Services</a> — or try the <a href="'+pre+'#finder">guided finder</a> to get a personal recommendation.'
+      a:'We offer six core services: <b>Paediatrics</b>, <b>Adolescents & Adults</b>, <b>Group-Based Intervention</b>, <b>Work-Based Intervention</b>, <b>Full Functional Capacity Evaluations</b> and <b>Medico-Legal Services</b> (nationwide). See <a href="services.html">Services</a>, or try the <a href="'+pre+'#finder">guided finder</a> to get a personal recommendation.'
     },
     {
       keys:['child','kid','son','daughter','paediatric','pediatric','school','development','delay','screening'],
       chip:'Help for my child',
-      a:'Our <b>Paediatrics</b> service helps children with development, learning and functional difficulties — at home, at school and beyond. We currently offer <b>free screenings</b> for children under 7 with a developmental delay. You can also take the two-minute <a href="'+pre+'#checkin">child development check-in</a>.'
+      a:'Our <b>Paediatrics</b> service helps children with development, learning and functional difficulties, at home, at school and beyond. We currently offer <b>free screenings</b> for children under 7 with a developmental delay. You can also take the two-minute <a href="'+pre+'#checkin">child development check-in</a>.'
     },
     {
       keys:['adult','myself','stress','burnout','depress','anxiet','mental'],
       chip:'Support for myself',
-      a:'We support adolescents and adults with life skills, emotional regulation and daily functioning — including stress, burnout and mental-health recovery. Try the <a href="'+pre+'#checkin">self check-in</a>, or <a href="'+pre+'#book">request an appointment</a> directly.'
+      a:'We support adolescents and adults with life skills, emotional regulation and daily functioning, including stress, burnout and mental-health recovery. Try the <a href="'+pre+'#checkin">self check-in</a>, or <a href="'+pre+'#book">request an appointment</a> directly.'
     },
     {
       keys:['group'],
@@ -378,12 +378,12 @@ if(bookForm){
     {
       keys:['work','corporate','employee','wellness','job'],
       chip:null,
-      a:'Our <b>Work-Based Intervention</b> ensures the best fit between work and person — employee wellness for individuals and corporate companies, plus return-to-work planning and workplace assessments. <a href="'+pre+'#book">Get in touch</a> to discuss your workplace\'s needs.'
+      a:'Our <b>Work-Based Intervention</b> ensures the best fit between work and person: employee wellness for individuals and corporate companies, plus return-to-work planning and workplace assessments. <a href="'+pre+'#book">Get in touch</a> to discuss your workplace\'s needs.'
     },
     {
       keys:['legal','medico','claim','accident','negligence','injury','rif','capacity evaluation','fce'],
       chip:null,
-      a:'We provide <b>Medico-Legal Services</b> — assessing and reporting on functional levels of clients affected by injury, accident or medical negligence — throughout South Africa, and <b>Full Functional Capacity Evaluations</b> (comprehensive standardised assessments). <a href="'+pre+'#book">Request an appointment</a> or WhatsApp us to discuss your matter.'
+      a:'We provide <b>Medico-Legal Services</b>, assessing and reporting on functional levels of clients affected by injury, accident or medical negligence, throughout South Africa, and <b>Full Functional Capacity Evaluations</b> (comprehensive standardised assessments). <a href="'+pre+'#book">Request an appointment</a> or WhatsApp us to discuss your matter.'
     },
     {
       keys:['where','address','location','directions','midrand','office','rooms'],
@@ -398,7 +398,7 @@ if(bookForm){
     {
       keys:['book','appointment','schedule','consult'],
       chip:'Book an appointment',
-      a:'The quickest way is the <a href="'+pre+'#book">appointment form</a> — it composes a WhatsApp message for you to review and send. Or message us directly on <a href="https://wa.me/27615040294" target="_blank" rel="noopener">WhatsApp (+27 61 504 0294)</a>.'
+      a:'The quickest way is the <a href="'+pre+'#book">appointment form</a>. It composes a WhatsApp message for you to review and send. Or message us directly on <a href="https://wa.me/27615040294" target="_blank" rel="noopener">WhatsApp (+27 61 504 0294)</a>.'
     },
     {
       keys:['fee','cost','price','charge','medical aid','pay'],
@@ -408,17 +408,17 @@ if(bookForm){
     {
       keys:['telehealth','online','video','remote','virtual'],
       chip:null,
-      a:'Yes — we offer fully functional <b>telehealth services</b> nationwide. For many concerns, especially mental-health and workplace support, telehealth works well and removes travel barriers. Some assessments do need to happen in person; we\'ll advise you honestly when you book.'
+      a:'Yes, we offer fully functional <b>telehealth services</b> nationwide. For many concerns, especially mental-health and workplace support, telehealth works well and removes travel barriers. Some assessments do need to happen in person; we\'ll advise you honestly when you book.'
     },
     {
       keys:['referral','doctor','gp'],
       chip:null,
-      a:'You\'re welcome to contact us directly — no referral needed to start. We\'ll let you know if anything else is required for your situation, and we work alongside doctors, schools and employers where helpful.'
+      a:'You\'re welcome to contact us directly, no referral needed to start. We\'ll let you know if anything else is required for your situation, and we work alongside doctors, schools and employers where helpful.'
     },
     {
       keys:['who','about','nondumiso','bikitsha','practice','since','history'],
       chip:null,
-      a:'Bikitsha Occupational Therapy was established by <b>Nondumiso Irene Bikitsha</b>, in private practice since 2015. The practice centres on mental health, work-practice and medico-legal services — holistic, client-centred care from in-utero to old age. More on our <a href="about-us.html">About us</a> page.'
+      a:'Bikitsha Occupational Therapy was established by <b>Nondumiso Irene Bikitsha</b>, in private practice since 2015. The practice centres on mental health, work-practice and medico-legal services: holistic, client-centred care from in-utero to old age. More on our <a href="about-us.html">About us</a> page.'
     },
     {
       keys:['contact','email','phone','whatsapp','number','call'],
@@ -483,7 +483,7 @@ if(bookForm){
     setTimeout(function(){
       if(hit){ addMsg(hit.a, 'bot'); }
       else{
-        addMsg('I\'m not sure about that one — but a human is! Send us your question directly on <a href="https://wa.me/27615040294?text='+encodeURIComponent('Hi Bikitsha OT, I have a question: '+q)+'" target="_blank" rel="noopener">WhatsApp</a> or <a href="mailto:admin@bikitshaot.co.za?subject='+encodeURIComponent('Question from your website')+'&body='+encodeURIComponent(q)+'">email</a> and we\'ll get back to you.', 'bot');
+        addMsg('I\'m not sure about that one, but a human is! Send us your question directly on <a href="https://wa.me/27615040294?text='+encodeURIComponent('Hi Bikitsha OT, I have a question: '+q)+'" target="_blank" rel="noopener">WhatsApp</a> or <a href="mailto:admin@bikitshaot.co.za?subject='+encodeURIComponent('Question from your website')+'&body='+encodeURIComponent(q)+'">email</a> and we\'ll get back to you.', 'bot');
       }
     }, 350);
   }
@@ -492,7 +492,7 @@ if(bookForm){
     fab.style.display='none';
     if(!started){
       started = true;
-      addMsg('Hi! 👋 I\'m the Bikitsha OT assistant. Ask me about our services, fees, location or booking — or tap a topic below.', 'bot');
+      addMsg('Hi! 👋 I\'m the Bikitsha OT assistant. Ask me about our services, fees, location or booking, or tap a topic below.', 'bot');
       addChips();
     }
     input.focus();
